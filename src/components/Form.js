@@ -3,6 +3,7 @@ import React from 'react'
 export default function Form() {
 
     const [formData, setFormData] =  React.useState({
+        favColor: "",
         firstName: "",
         lastName: "",
         email: "",
@@ -23,10 +24,28 @@ export default function Form() {
             }
         })
     }
+    function handleSubmit(event){
+        event.preventDefault();
+        console.log(formData)
+    }
 
   return (
 
-    <form className='mt-5 text-center'>
+    <form className='mt-5 text-center' onSubmit={handleSubmit}>
+        <select
+            id='favColor'
+            value={formData.favColor}
+            onChange={handleChange}
+            name="favColor"
+        >
+            <option value="">-- Select --</option>
+            <option value="red">Red</option>
+            <option value="orange">orange</option>
+            <option value="yellow">yellow</option>
+            <option value="green">green</option>
+            <option value="blue">blue</option>
+        </select>
+        <br />
         <input
             type="text"
             placeholder='First Name'
@@ -95,6 +114,7 @@ export default function Form() {
             <label htmlFor='fulltime'>&nbsp;Full-time</label>
 
         </fieldset>
+        <button>Submit</button>
     </form>
   )
 }
