@@ -4,7 +4,8 @@ import Header from "./components/Header";
 // import Meme from "./components/Meme";
 import Box from "./components/Box";
 import ImageList from "./components/ImageList";
-import Form from './components/Form';
+// import Form from './components/Form';
+import Api from './components/Api';
 
 // function App() {
 //     return (
@@ -51,7 +52,8 @@ function App() {
         <div className="App">
             <Header  />
             {/* {squareElements} */}
-            <Form  />
+            {/* <Form  /> */}
+            <Api />
             {/* <Meme  /> */}
         </div>
     );
